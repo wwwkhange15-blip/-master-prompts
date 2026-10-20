@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPrompt Vault | Underrated & Power AI Prompts</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">⚡</span>
+                <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                    ProPrompt Vault
+                </h1>
+                <span class="text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full">Hidden Tricks</span>
+            </div>
+            <!-- Search Bar -->
+            <div class="w-full md:w-80">
+                <input type="text" id="searchInput" onkeyup="filterPrompts()" placeholder="Search hidden prompts..." 
+                       class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500 transition">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
+        
+        <!-- Hero Banner -->
+        <div class="text-center py-8 border-b border-slate-800/80 mb-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">
+                Underrated & Power Prompts for Power Users
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">
+                Stop getting generic AI responses. Copy tested system prompts, reverse-engineering frameworks, and Claude/ChatGPT hidden tricks.
+            </p>
+        </div>
+
+        <!-- Prompts Grid -->
+        <div id="promptsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Prompt Card 1 -->
+            <div class="prompt-card bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">ChatGPT & Claude</span>
+                        <span class="text-xs text-slate-500">System Prompt</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">The "Anti-Yapping" No-Fluff Filter</h3>
+                    <p class="text-xs text-slate-400 mb-4">Stops AI from giving conversational filler ("Certainly!", "I hope this helps"). Forces 100% direct, concise answers.</p>
+                    
+                    <div class="relative bg-slate-950 rounded-lg p-3 border border-slate-800 mb-4">
+                        <pre class="text-xs text-indigo-300 font-mono whitespace-pre-wrap prompt-text">[SYSTEM INSTRUCTION]
+Role: Elite Direct Technical Advisor.
+Rules:
+1. NEVER include conversational pleasantries, intros, or outros.
+2. Answer directly in clean Markdown format with bold headings.
+3. If information is missing, ask max 2 clarifying questions before answering.
+4. Keep explanations brief, dense, and 100% actionable.</pre>
+                    </div>
+                </div>
+                <button onclick="copyPrompt(this)" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg text-sm transition flex items-center justify-center gap-2">
+                    <span>📋</span> <span>Copy Hidden Prompt</span>
+                </button>
+            </div>
+
+            <!-- Prompt Card 2 -->
+            <div class="prompt-card bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Claude 3.5 / 3.7</span>
+                        <span class="text-xs text-slate-500">Visuals</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">Mermaid.js Visual Mindmap Generator</h3>
+                    <p class="text-xs text-slate-400 mb-4">Forces AI to output code that automatically renders visual diagrams and flowcharts in Claude Artifacts.</p>
+                    
+                    <div class="relative bg-slate-950 rounded-lg p-3 border border-slate-800 mb-4">
+                        <pre class="text-xs text-indigo-300 font-mono whitespace-pre-wrap prompt-text">Act as a Visual System Architect.
+Do not explain the concept in plain paragraphs. Instead, convert [INSERT TOPIC/PROCESS] into a complete, clean Mermaid.js mindmap diagram.
+Use proper node syntax (`graph TD` or `mindmap`) so it renders natively inside the viewer. Add short labels to every connection.</pre>
+                    </div>
+                </div>
+                <button onclick="copyPrompt(this)" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg text-sm transition flex items-center justify-center gap-2">
+                    <span>📋</span> <span>Copy Hidden Prompt</span>
+                </button>
+            </div>
+
+            <!-- Prompt Card 3 -->
+            <div class="prompt-card bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Problem Solving</span>
+                        <span class="text-xs text-slate-500">Logic & Audit</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">Devil's Advocate Loophole Finder</h3>
+                    <p class="text-xs text-slate-400 mb-4">Forces the AI to aggressively critique your plan, business idea, or code for hidden failure points.</p>
+                    
+                    <div class="relative bg-slate-950 rounded-lg p-3 border border-slate-800 mb-4">
+                        <pre class="text-xs text-indigo-300 font-mono whitespace-pre-wrap prompt-text">Analyze [INSERT PLAN / CODE / IDEA].
+Do not compliment it. Your sole job is to act as an aggressive adversary searching for failure modes.
+List 5 fatal flaws, 3 hidden assumptions I am making, and the exact scenario where this idea will fail completely. Be brutally honest.</pre>
+                    </div>
+                </div>
+                <button onclick="copyPrompt(this)" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg text-sm transition flex items-center justify-center gap-2">
+                    <span>📋</span> <span>Copy Hidden Prompt</span>
+                </button>
+            </div>
+
+            <!-- Prompt Card 4 -->
+            <div class="prompt-card bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Meta-Prompting</span>
+                        <span class="text-xs text-slate-500">Prompt Generator</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">The Universal Prompt Refiner</h3>
+                    <p class="text-xs text-slate-400 mb-4">Paste any lazy prompt, and AI turns it into an expert-level mega prompt with constraints and roles.</p>
+                    
+                    <div class="relative bg-slate-950 rounded-lg p-3 border border-slate-800 mb-4">
+                        <pre class="text-xs text-indigo-300 font-mono whitespace-pre-wrap prompt-text">I want you to become my Master Prompt Engineer.
+I will give you a basic task: "[INSERT SIMPLE TASK HERE]".
+Rewrite it into a comprehensive, multi-step Master Prompt that includes: 1) Persona Role, 2) Precise Context, 3) Step-by-Step Instructions, 4) Formatting Constraints, and 5) Few-Shot Example placeholders.</pre>
+                    </div>
+                </div>
+                <button onclick="copyPrompt(this)" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg text-sm transition flex items-center justify-center gap-2">
+                    <span>📋</span> <span>Copy Hidden Prompt</span>
+                </button>
+            </div>
+
+            <!-- Prompt Card 5 -->
+            <div class="prompt-card bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Deep Work</span>
+                        <span class="text-xs text-slate-500">PDF Extraction</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">Claude Deep PDF Contradiction Finder</h3>
+                    <p class="text-xs text-slate-400 mb-4">Scans large documents or reports to find hidden logical gaps, bad stats, and internal contradictions.</p>
+                    
+                    <div class="relative bg-slate-950 rounded-lg p-3 border border-slate-800 mb-4">
+                        <pre class="text-xs text-indigo-300 font-mono whitespace-pre-wrap prompt-text">Read the attached document carefully.
+Do not summarize it. Instead, find:
+1) 3 statements or claims that contradict each other across different pages.
+2) Data claims that lack clear citations or evidence within the text.
+3) Vague promises that lack an execution framework.
+Format your finding as a table with columns: [Page/Section | Issue Found | Risk Level].</pre>
+                    </div>
+                </div>
+                <button onclick="copyPrompt(this)" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg text-sm transition flex items-center justify-center gap-2">
+                    <span>📋</span> <span>Copy Hidden Prompt</span>
+                </button>
+            </div>
+
+            <!-- Prompt Card 6 -->
+            <div class="prompt-card bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Interactive Learning</span>
+                        <span class="text-xs text-slate-500">Socratic Tutor</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">Socratic One-Question-at-a-Time Tutor</h3>
+                    <p class="text-xs text-slate-400 mb-4">Turns AI into an active teacher that tests your knowledge step-by-step instead of dumping long lectures.</p>
+                    
+                    <div class="relative bg-slate-950 rounded-lg p-3 border border-slate-800 mb-4">
+                        <pre class="text-xs text-indigo-300 font-mono whitespace-pre-wrap prompt-text">Teach me [INSERT TOPIC] using the Socratic method.
+STRICT RULE: Do NOT give long lectures or explain everything at once.
+Ask me ONE targeted question at a time to test my baseline. Wait for my reply. Based on my answer, evaluate my understanding and ask the next logical question.</pre>
+                    </div>
+                </div>
+                <button onclick="copyPrompt(this)" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg text-sm transition flex items-center justify-center gap-2">
+                    <span>📋</span> <span>Copy Hidden Prompt</span>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        <p>© ProPrompt Vault — Built with GitHub Pages. Free & Open Source.</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        function copyPrompt(button) {
+            const card = button.closest('.prompt-card');
+            const textToCopy = card.querySelector('.prompt-text').innerText;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalContent = button.innerHTML;
+                button.innerHTML = '<span>✅</span> <span>Copied!</span>';
+                button.classList.remove('bg-indigo-600', 'hover:bg-indigo-500');
+                button.classList.add('bg-emerald-600');
+
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    button.classList.remove('bg-emerald-600');
+                    button.classList.add('bg-indigo-600', 'hover:bg-indigo-500');
+                }, 2000);
+            });
+        }
+
+        function filterPrompts() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.getElementsByClassName('prompt-card');
+
+            Array.from(cards).forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
